@@ -6,5 +6,6 @@ Utilities for using FontAwesome icons in ASP.NET Webforms.
 
 ### FontAwesome Icons In Webforms Buttons
 ```asp
-<asp:Button ID="Button1" runat="server" Text="<%# FontAwesome.Icons.Rocket %>" CssClass="fa" />
+<asp:Button ID="Button1" runat="server" 
+    Text="<%# FontAwesome.Icons.Rocket %>" CssClass="fa" />
 ```
