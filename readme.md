@@ -2,6 +2,10 @@
 
 Utilities for using FontAwesome icons in ASP.NET Webforms.
 
+## Get it on Nuget!
+
+    Install-Package FontAwesome-ASP.NET
+
 ## Usage
 
 #### FontAwesome Icons In Webforms Buttons
