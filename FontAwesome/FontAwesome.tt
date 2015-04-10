@@ -1,0 +1,32 @@
+<#@ template language="C#" debug="True" hostSpecific="true" #>
+<#@ output extension="cs" encoding="utf-8" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text.RegularExpressions"#>
+<#@ import namespace="System.Globalization" #>
+<#@ assembly name="$(ProjectDir)bin\$(Configuration)\FontAwesome.Parser.dll" #>
+<#@ import namespace="FontAwesome.Parser" #>
+<#
+	var parser = new Parser();
+	var icons = parser.Parse(Host.ResolvePath("FontAwesome.yml"));
+	var regex = new Regex(@"[^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Nl}\p{Mn}\p{Mc}\p{Cf}\p{Pc}\p{Lm}]");
+    var cul = new CultureInfo("en-US",false).TextInfo;
+#>
+using FontAwesome.Models;
+namespace FontAwesome
+{	
+	public static class Icons 
+	{	<# foreach(var icon in icons){		
+			var name = cul.ToTitleCase(regex.Replace(icon.name," ")).Replace(" ","");			 
+		#>    
+		public static Icon <#= name #> {
+			get {
+			  return new Icon{
+				 Name="<#= name #>",
+				 Code="<#= icon.unicode.ToUpper() #>",
+				 Unicode="\x<#= icon.unicode.ToUpper() #>"
+			   };
+			}
+		}
+		<# } #>
+	}
+}
