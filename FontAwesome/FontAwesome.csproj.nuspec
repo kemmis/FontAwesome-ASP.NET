@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FontAwesome-ASP.NET</id>
+    <version>$version$</version>
+    <authors>Rafe Kemmis</authors>
+    <owners>Rafe kemmis</owners>
+    <projectUrl>https://github.com/kemmis/FontAwesome-ASP.NET</projectUrl>
+    <description>Utilities for using FontAwesome icons in ASP.NET Webforms.</description>
+  </metadata>
+</package>

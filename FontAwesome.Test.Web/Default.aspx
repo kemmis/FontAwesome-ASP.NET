@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:Button ID="Button1" runat="server" Text="<%# FontAwesome.Icons.ArrowCircleUp %>" CssClass="fa" />
+        <asp:Button ID="Button1" runat="server" Text="<%# FontAwesome.Icons.CaretSquareOutlinedLeft %>" CssClass="fa" />
     </div>
     </form>
 </body>
